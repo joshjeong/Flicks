@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="144.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ro0-Jo-pz1">
@@ -26,9 +26,9 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxx-5r-Nkj">
-                        <rect key="frame" x="136.5" y="59" width="165.5" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxx-5r-Nkj">
+                        <rect key="frame" x="136.5" y="113" width="165.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -41,12 +41,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="xxx-5r-Nkj" firstAttribute="leading" secondItem="lBF-WD-OrS" secondAttribute="trailing" constant="10" id="1Mj-eM-Mcu"/>
-                    <constraint firstItem="xxx-5r-Nkj" firstAttribute="top" secondItem="ro0-Jo-pz1" secondAttribute="bottom" constant="20" id="8vJ-Md-Roq"/>
                     <constraint firstItem="ro0-Jo-pz1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="GMO-rX-CoU"/>
                     <constraint firstItem="ro0-Jo-pz1" firstAttribute="leading" secondItem="lBF-WD-OrS" secondAttribute="trailing" constant="10" id="SYp-1H-78N"/>
                     <constraint firstItem="lBF-WD-OrS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="YEh-EY-2np"/>
                     <constraint firstAttribute="bottomMargin" secondItem="lBF-WD-OrS" secondAttribute="bottom" constant="10" id="lYa-Ar-ZqG"/>
                     <constraint firstItem="lBF-WD-OrS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="nFW-Ab-b82"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xxx-5r-Nkj" secondAttribute="bottom" constant="10" id="tp7-7i-BmL"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ro0-Jo-pz1" secondAttribute="trailing" constant="10" id="xgg-O4-BCc"/>
                     <constraint firstAttribute="trailingMargin" secondItem="xxx-5r-Nkj" secondAttribute="trailing" constant="10" id="z78-6G-TkP"/>
                 </constraints>

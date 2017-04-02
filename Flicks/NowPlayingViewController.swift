@@ -18,13 +18,42 @@ class NowPlayingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
-        tableView.rowHeight = 100
+        tableView.rowHeight = 150
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(self.refreshData(_:)), for: UIControlEvents.valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+        
+        refreshData(refreshControl)
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    func refreshData(_ refreshControl: UIRefreshControl) {
         Movie.fetchNowPlayingMovies(successCallBack: {movies in
             self.movies = movies
             self.tableView.reloadData()
-        }, errorCallBack: nil)
+            refreshControl.endRefreshing()
+        }, errorCallBack: { error in
+            if let error = error {
+                print(error)
+            }
+            
+            refreshControl.endRefreshing()
+        })
     }
-    
 }
 
 extension NowPlayingViewController: UITableViewDelegate, UITableViewDataSource {
@@ -35,9 +64,10 @@ extension NowPlayingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
         let movie = movies[indexPath.row]
+
         if let posterPath = movie.posterPath {
             let baseURL = "http://image.tmdb.org/t/p/w185"
-            print(baseURL + posterPath)
+            
             cell.thumbnailImageView.setImageWith(URL(string: baseURL + posterPath)!)
             cell.thumbnailImageView.contentMode = .scaleAspectFit
         }
@@ -45,5 +75,13 @@ extension NowPlayingViewController: UITableViewDelegate, UITableViewDataSource {
         cell.descriptionLabel.text = movie.overview
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
+        vc.movie = movies[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 

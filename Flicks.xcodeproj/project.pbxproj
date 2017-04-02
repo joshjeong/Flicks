@@ -11,6 +11,7 @@
 		7678DA111E8E13D3007305B1 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678DA0F1E8E13D3007305B1 /* ListTableViewCell.swift */; };
 		7678DA121E8E13D3007305B1 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7678DA101E8E13D3007305B1 /* ListTableViewCell.xib */; };
 		767D33B61E8E18C4008E3035 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767D33B51E8E18C4008E3035 /* AFNetworking.framework */; };
+		767D33B81E8E9F23008E3035 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D33B71E8E9F23008E3035 /* MovieDetailViewController.swift */; };
 		76E6005B1E8C8546009B5C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E6005A1E8C8546009B5C32 /* AppDelegate.swift */; };
 		76E6005D1E8C8546009B5C32 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E6005C1E8C8546009B5C32 /* NowPlayingViewController.swift */; };
 		76E6005F1E8C8546009B5C32 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E6005E1E8C8546009B5C32 /* SecondViewController.swift */; };
@@ -25,6 +26,7 @@
 		7678DA0F1E8E13D3007305B1 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		7678DA101E8E13D3007305B1 /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		767D33B51E8E18C4008E3035 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
+		767D33B71E8E9F23008E3035 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		76E600571E8C8546009B5C32 /* Flicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E6005A1E8C8546009B5C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76E6005C1E8C8546009B5C32 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				76E6006E1E8C874D009B5C32 /* Movie.swift */,
 				7678DA0F1E8E13D3007305B1 /* ListTableViewCell.swift */,
 				7678DA101E8E13D3007305B1 /* ListTableViewCell.xib */,
+				767D33B71E8E9F23008E3035 /* MovieDetailViewController.swift */,
 			);
 			path = Flicks;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				76E6005B1E8C8546009B5C32 /* AppDelegate.swift in Sources */,
 				76E6006F1E8C874D009B5C32 /* Movie.swift in Sources */,
 				76E6005D1E8C8546009B5C32 /* NowPlayingViewController.swift in Sources */,
+				767D33B81E8E9F23008E3035 /* MovieDetailViewController.swift in Sources */,
 				7678DA111E8E13D3007305B1 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
