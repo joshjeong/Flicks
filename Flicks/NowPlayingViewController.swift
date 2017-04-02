@@ -18,7 +18,7 @@ class NowPlayingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
         tableView.rowHeight = 150
         
@@ -44,6 +44,8 @@ class NowPlayingViewController: UIViewController {
     }
     
     func refreshData(_ refreshControl: UIRefreshControl) {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         Movie.fetchNowPlayingMovies(successCallBack: {movies in
             self.movies = movies
             self.tableView.reloadData()
@@ -91,8 +93,8 @@ extension NowPlayingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
         vc.movie = movies[indexPath.row]
-        
         navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath, animated:true)
     }
 }
 

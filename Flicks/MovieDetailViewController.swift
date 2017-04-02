@@ -44,8 +44,8 @@ class MovieDetailViewController: UIViewController {
                 dateLabel.text = formatDate(date: date)
             }
             
-            if let rating = movie.popularity {
-                ratingLabel.text = "\(Int(rating))%"
+            if let rating = movie.voteAvg {
+                ratingLabel.text = "\(Int(rating * 10))%"
             }
             
             if let overview = movie.overview {
