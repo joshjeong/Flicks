@@ -51,8 +51,16 @@ class NowPlayingViewController: UIViewController {
                 print(error)
             }
             
+            self.showError(message: "Can't connect to the internet. Please try again later.")
+            
             refreshControl.endRefreshing()
         })
+    }
+    
+    func showError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -82,6 +90,5 @@ extension NowPlayingViewController: UITableViewDelegate, UITableViewDataSource {
         
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
