@@ -8,6 +8,7 @@
 
 import UIKit
 import AFNetworking
+import MBProgressHUD
 
 class NowPlayingViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class NowPlayingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
         tableView.rowHeight = 150
         
@@ -46,6 +48,7 @@ class NowPlayingViewController: UIViewController {
             self.movies = movies
             self.tableView.reloadData()
             refreshControl.endRefreshing()
+            MBProgressHUD.hide(for: self.view, animated: true)
         }, errorCallBack: { error in
             if let error = error {
                 print(error)
@@ -54,6 +57,7 @@ class NowPlayingViewController: UIViewController {
             self.showError(message: "Can't connect to the internet. Please try again later.")
             
             refreshControl.endRefreshing()
+            MBProgressHUD.hide(for: self.view, animated: true)
         })
     }
     
