@@ -65,9 +65,9 @@ class Movie {
 
 extension Movie {
     
-    static func fetchNowPlayingMovies(successCallBack: @escaping ([Movie]) -> (), errorCallBack: ((Error?) -> ())?) {
+    static func fetchNowPlayingMovies(endpoint: String, successCallBack: @escaping ([Movie]) -> (), errorCallBack: ((Error?) -> ())?) {
         let apiKey = "47809af88c3a5d4813ca5f235604fea6"
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")!
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in

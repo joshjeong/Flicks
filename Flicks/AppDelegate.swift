@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        initTabBarController()
+        
         return true
     }
 
@@ -39,6 +41,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func initTabBarController() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationVC1 = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") as! UINavigationController
+        
+        let vc1 = mainStoryboard.instantiateViewController(withIdentifier: "NowPlayingViewController") as! NowPlayingViewController
+        navigationVC1.tabBarItem.title = "Now Playing"
+        navigationVC1.tabBarItem.image = UIImage(named: "playing")
+        navigationVC1.navigationBar.barTintColor = UIColor.black
+        navigationVC1.navigationBar.tintColor = UIColor.yellow
+        vc1.endpoint = "now_playing"
+        
+        let navigationVC2 = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") as! UINavigationController
+        let vc2 = mainStoryboard.instantiateViewController(withIdentifier: "NowPlayingViewController") as! NowPlayingViewController
+        navigationVC2.tabBarItem.title = "Top Rated"
+        navigationVC2.tabBarItem.image = UIImage(named: "star")
+        vc2.endpoint = "top_rated"
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [navigationVC1, navigationVC2]
+        tabBarController.tabBar.barTintColor = UIColor.black
+        tabBarController.tabBar.tintColor = UIColor.yellow
+        
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
+        navigationVC1.pushViewController(vc1, animated: false)
+        navigationVC2.pushViewController(vc2, animated: false)
     }
 
 

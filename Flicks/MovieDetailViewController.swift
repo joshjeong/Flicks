@@ -45,7 +45,7 @@ class MovieDetailViewController: UIViewController {
             }
             
             if let rating = movie.voteAvg {
-                ratingLabel.text = "\(Int(rating * 10))%"
+                ratingLabel.text = "Rating: \(Int(rating * 10))%"
             }
             
             if let overview = movie.overview {
