@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Now Playing View Controller-->
+        <!--Movies View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController storyboardIdentifier="NowPlayingViewController" id="9pv-A4-QxB" customClass="NowPlayingViewController" customModule="Flicks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoviesViewController" id="9pv-A4-QxB" customClass="MoviesViewController" customModule="Flicks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -117,7 +117,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.52753232758620694" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.72095905172413788" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="Yhe-Mp-GCA" firstAttribute="leading" secondItem="azD-kY-wK6" secondAttribute="leading" constant="20" id="0FG-A2-ZNE"/>
                                             <constraint firstAttribute="trailing" secondItem="UEN-qy-Pej" secondAttribute="trailing" constant="20" id="1w5-Ps-Wcz"/>

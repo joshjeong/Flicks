@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationVC1 = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") as! UINavigationController
         
-        let vc1 = mainStoryboard.instantiateViewController(withIdentifier: "NowPlayingViewController") as! NowPlayingViewController
+        let vc1 = mainStoryboard.instantiateViewController(withIdentifier: "MoviesViewController") as! MoviesViewController
         navigationVC1.tabBarItem.title = "Now Playing"
         navigationVC1.tabBarItem.image = UIImage(named: "playing")
         navigationVC1.navigationBar.barTintColor = UIColor.black
@@ -56,9 +56,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         vc1.endpoint = "now_playing"
         
         let navigationVC2 = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") as! UINavigationController
-        let vc2 = mainStoryboard.instantiateViewController(withIdentifier: "NowPlayingViewController") as! NowPlayingViewController
+        let vc2 = mainStoryboard.instantiateViewController(withIdentifier: "MoviesViewController") as! MoviesViewController
         navigationVC2.tabBarItem.title = "Top Rated"
         navigationVC2.tabBarItem.image = UIImage(named: "star")
+        navigationVC2.navigationBar.barTintColor = UIColor.black
+        navigationVC2.navigationBar.tintColor = UIColor.yellow
         vc2.endpoint = "top_rated"
         
         let tabBarController = UITabBarController()
